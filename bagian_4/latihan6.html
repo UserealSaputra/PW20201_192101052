@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>Calculator</title>
+        <style>
+            .flex {
+                display: flex;
+                justify-content: center;
+            }
+            .flex div {
+                margin: 3px;
+            }
+            .flex div:nth-child(even){
+                align-self: flex-end;
+            }
+            h2 {
+                color: red;
+                text-align: center;
+            }
+            select, button{
+                height: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex">
+            <div>
+                <h2>Nilai I</h2>
+                <input type="text" placeholder="Angka pertama" id="num1"/>
+            </div>
+            <div>
+                <select id="ket">
+                    <option value="+" selected>+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+            </div>
+            <div>
+                <h2>Nilai II</h2>
+                <input type="text" placeholder="Angka Kedua"  id="num2"/>  
+            </div>
+            <div>
+                <button onclick="submit()">Submit</button>
+            </div>
+        </div>    
+        <h2 id="res"></h2>
+    </body>
+    <script type="text/javascript">
+        var res = document.getElementById('res');
+        function submit(){
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var ket = document.getElementById('ket').value;
+            console.log(num1, num2)
+            if(ket == '+'){
+                res.innerHTML = num1 + num2;
+            }else if(ket == '-'){
+                res.innerHTML = num1 - num2;
+            }else if(ket == '*'){
+                res.innerHTML = num1 * num2;
+            }else if(ket == '/'){
+                if(num2 == 0){
+                    res.innerHTML = 'Tidak bisa dibagi nol';
+                }else{
+                    res.innerHTML = num1 / num2;
+                }
+            }
+        }
+    </script>
+</html>
