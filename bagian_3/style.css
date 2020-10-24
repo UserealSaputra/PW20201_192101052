@@ -31,7 +31,7 @@ div:first-letter {
 
 ul ul li { 
     font-size: x-large; 
-    font-decoration: italic; 
+    text-decoration: italic; 
 }
 
 h2 em { 
@@ -79,7 +79,7 @@ blockquote {
     font-size: xx-large; 
     color: #808000; 
 }
- 
+
 h5 { 
     font-size: xx-small ! important; 
     color: red ! important; 
